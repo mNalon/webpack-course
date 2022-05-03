@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack"
+    "bundle": "webpack --stats verbose"
   },
   "author": "",
   "license": "ISC",
