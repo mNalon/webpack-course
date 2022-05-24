@@ -10,9 +10,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jpg|jpeg|png)$/,
+        test: /\.(jpg|jpeg)$/,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(png)$/,
+        type: 'asset/inline'
       }
+      // `type: asset` will make webpack choose by itself which type of asset to use (inline or resource) based on file size
     ]
   },
   mode: 'none'
