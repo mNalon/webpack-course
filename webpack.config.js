@@ -9,6 +9,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // assets modules
       {
         test: /\.(jpg|jpeg)$/,
         type: 'asset/resource'
@@ -17,11 +18,19 @@ module.exports = {
         test: /\.(png)$/,
         type: 'asset/inline'
       },
-      // `type: asset` will make webpack choose by itself which type of asset to use (inline or resource) based on file size
+        // `type: asset` will make webpack choose by itself which type of asset to use (inline or resource) based on file size
       {
         test: /\.txt/,
         type: 'asset/source'
+      },
+      //
+
+      // loaders
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
+      //
     ]
   },
   mode: 'none'
