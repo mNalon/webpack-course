@@ -6,6 +6,7 @@ import fooBarImgPNG from './foo-bar.png'
 
 import AddRandomTextButton from './components/add-random-text-button/index.js'
 import { PageHeader } from './components/page-header/index.js'
+import { PageFooter } from './components/page-footer/index.js' 
 
 helloWorld();
 
@@ -15,4 +16,6 @@ appendImage(fooBarImgJPEG);
 appendImage(fooBarImgPNG);
 
 document.body.appendChild(AddRandomTextButton())
+
+document.body.appendChild(PageFooter())
 
