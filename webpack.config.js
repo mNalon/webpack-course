@@ -2,6 +2,7 @@ const path = require('path')
 
 const TerserPlugin = require('terser-webpack-plugin') //already available as a webpack ^5 dependency
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWenpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -9,7 +10,7 @@ module.exports = {
     clean: true, // to a more grained customization use the clean-webpack-plugin
     filename: 'bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: 'dist/'
+    // publicPath: 'dist/'
   },
   module: {
     rules: [
@@ -56,6 +57,12 @@ module.exports = {
     new TerserPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css'
+    }),
+    new HtmlWenpackPlugin({
+      title: 'Hello world',
+      meta: {
+        description: 'Some description'
+      }
     })
   ],
   mode: 'none'
