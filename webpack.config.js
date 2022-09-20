@@ -49,6 +49,13 @@ module.exports = {
             plugins: [['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}]],
           }
         }
+      },
+      {
+        test: /\.ejs$/,
+        loader: 'ejs-loader',
+        options: {
+          esModule: false
+        }
       }
       //
     ]
@@ -60,9 +67,8 @@ module.exports = {
     }),
     new HtmlWenpackPlugin({
       title: 'Hello world',
-      meta: {
-        description: 'Some description'
-      }
+      description: 'Some description',
+      template: 'src/index.ejs'
     })
   ],
   mode: 'none'
